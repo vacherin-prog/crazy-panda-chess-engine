@@ -6,5 +6,5 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_executable(CrazyPandaChessEngine)
 
 target_sources(CrazyPandaChessEngine PRIVATE
-    src/main.cpp
+    src/main.cpp src/board.cpp
 )
