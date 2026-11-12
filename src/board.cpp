@@ -3,6 +3,7 @@
 #include <cctype>
 #include <iostream>
 #include <iterator>
+#include <ostream>
 #include <sstream>
 #include <stdexcept>
 #include <string>
@@ -87,4 +88,15 @@ void Board::load_fen(const std::string &fen) {
   }
   half_move_clock = half_move;
   full_move_number = full_move;
+}
+void Board::print() const {
+  for (int i = 0; i < 8; i++) {
+
+    for (int j = 0; j < 8; j++) {
+      int index = get_index(i, j);
+      char notation = piece_to_char(static_cast<Piece>(squares[index]));
+      std::cout << notation << "  ";
+    }
+    std::cout << "\n";
+  }
 }
